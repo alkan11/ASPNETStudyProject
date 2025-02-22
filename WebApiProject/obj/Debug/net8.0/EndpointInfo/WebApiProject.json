@@ -86,7 +86,7 @@
           }
         }
       },
-      "get": {
+      "delete": {
         "tags": [
           "Books"
         ],
@@ -105,15 +105,18 @@
             "description": "OK"
           }
         }
-      },
-      "delete": {
+      }
+    },
+    "/api/books/{id}": {
+      "get": {
         "tags": [
           "Books"
         ],
         "parameters": [
           {
             "name": "id",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"

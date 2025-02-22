@@ -44,7 +44,7 @@ namespace Presentation.Controllers
             return Ok(books);
         }
 
-        [HttpGet("id:int")]
+        [HttpGet("{id:int}")]
         public IActionResult GetOnebook(int id)
         {
             try

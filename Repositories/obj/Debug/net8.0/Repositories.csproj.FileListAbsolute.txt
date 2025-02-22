@@ -13,3 +13,4 @@ C:\Users\simse\source\repos\ASPNETStudyProjects\Repositories\obj\Debug\net8.0\Re
 C:\Users\simse\source\repos\ASPNETStudyProjects\Repositories\obj\Debug\net8.0\refint\Repositories.dll
 C:\Users\simse\source\repos\ASPNETStudyProjects\Repositories\obj\Debug\net8.0\Repositories.pdb
 C:\Users\simse\source\repos\ASPNETStudyProjects\Repositories\obj\Debug\net8.0\ref\Repositories.dll
+C:\Users\simse\source\repos\ASPNETStudyProjects\Repositories\obj\Debug\net8.0\Repositories.sourcelink.json

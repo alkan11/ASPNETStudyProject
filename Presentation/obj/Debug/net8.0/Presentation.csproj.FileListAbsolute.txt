@@ -17,3 +17,4 @@ C:\Users\simse\source\repos\ASPNETStudyProjects\Presentation\obj\Debug\net8.0\Pr
 C:\Users\simse\source\repos\ASPNETStudyProjects\Presentation\obj\Debug\net8.0\refint\Presentation.dll
 C:\Users\simse\source\repos\ASPNETStudyProjects\Presentation\obj\Debug\net8.0\Presentation.pdb
 C:\Users\simse\source\repos\ASPNETStudyProjects\Presentation\obj\Debug\net8.0\ref\Presentation.dll
+C:\Users\simse\source\repos\ASPNETStudyProjects\Presentation\obj\Debug\net8.0\Presentation.sourcelink.json

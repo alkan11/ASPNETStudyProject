@@ -17,11 +17,17 @@ builder.Services.ConfigureServiceManager();
 
 var app = builder.Build();
 
+var logger = app.Services.GetRequiredService<ILoggerProvider>();
+app.ConfigureExceptionHandler(logger);
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+if (app.Environment.IsProduction())
+{
+    app.UseHsts();
 }
 
 app.UseHttpsRedirection();
