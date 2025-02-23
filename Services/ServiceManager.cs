@@ -1,4 +1,5 @@
-﻿using Repositories.Abstract;
+﻿using AutoMapper;
+using Repositories.Abstract;
 using Services.Abstract;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,9 @@ namespace Services
     public class ServiceManager : IServiceManager
     {
         private readonly Lazy<IBookservice> _bookservice;
-        public ServiceManager(IRepositoryManager repositoryManager)
+        public ServiceManager(IRepositoryManager repositoryManager,IMapper mapper)
         {
-            _bookservice = new Lazy<IBookservice>(() => new BookManager(repositoryManager));   
+            _bookservice = new Lazy<IBookservice>(() => new BookManager(repositoryManager,mapper));   
         }
         public IBookservice Bookservice => _bookservice.Value;
     }

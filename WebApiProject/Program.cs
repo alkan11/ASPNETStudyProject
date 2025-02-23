@@ -6,7 +6,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers().AddApplicationPart(typeof(Presentation.AssemblyReference).Assembly);
+builder.Services.AddControllers(config =>
+{
+    config.RespectBrowserAcceptHeader = true;//Ýçerik pazarlýðýna açýk olduðumuzu belirttik.
+    config.ReturnHttpNotAcceptable = true;//Yapýlan istek formatýnýn desteklenmediðini istemciye gönderdik.406 kodu ile
+})
+.AddXmlDataContractSerializerFormatters()    
+.AddApplicationPart(typeof(Presentation.AssemblyReference).Assembly);
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -14,6 +21,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.ConfigureManagerRepository();
 builder.Services.ConfigureServiceManager();
+
+builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
 

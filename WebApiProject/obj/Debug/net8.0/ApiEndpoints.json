@@ -56,7 +56,7 @@
       },
       {
         "Name": "book",
-        "Type": "Entities.Models.Book",
+        "Type": "Entities.DTO.BookDto",
         "IsRequired": true
       }
     ],

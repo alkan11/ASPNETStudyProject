@@ -1,4 +1,6 @@
-﻿using Entities.Models;
+﻿using AutoMapper;
+using Entities.DTO;
+using Entities.Models;
 using Repositories.Abstract;
 using Services.Abstract;
 using System;
@@ -13,10 +15,12 @@ namespace Services
     public class BookManager : IBookservice
     {
         private readonly IRepositoryManager _repositoryManager;
+        private readonly IMapper _mapper;
 
-        public BookManager(IRepositoryManager repositoryManager)
+        public BookManager(IRepositoryManager repositoryManager, IMapper mapper)
         {
             _repositoryManager = repositoryManager;
+            _mapper = mapper;
         }
 
         public Book CreateOneBook(Book book)
@@ -38,17 +42,18 @@ namespace Services
             _repositoryManager.Save();
         }
 
-        public IEnumerable<Book> GetAllBooks(bool trackchanges)
+        public IEnumerable<BookDto> GetAllBooks(bool trackchanges)
         {
-            return _repositoryManager.Book.GetAllBooks(trackchanges);
-        }
+            var books=_repositoryManager.Book.GetAllBooks(trackchanges);
+            return _mapper.Map<IEnumerable<BookDto>>(books);
+        } 
 
         public Book GetOnebookById(int id,bool trackchanges)
         {
             return _repositoryManager.Book.GetOneBookById(id, trackchanges);
         }
 
-        public void UpdateOneBook(int id, Book book,bool trackchanges)
+        public void UpdateOneBook(int id, BookDto book,bool trackchanges)
         {
             var entity = _repositoryManager.Book.GetOneBookById(id, trackchanges);
             if (entity is null)
@@ -58,11 +63,14 @@ namespace Services
 
             if (book is null)
                 throw new ArgumentNullException(nameof(book));
+            //Mapping process
+            //entity.Name=book.Name;
+            //entity.Price=book.Price;
 
-            entity.Name=book.Name;
-            entity.Price=book.Price;
+            entity=_mapper.Map<Book>(book);
+            
 
-            _repositoryManager.Book.UpdateOneBook(entity);
+            _repositoryManager.Book.Update(entity);
             _repositoryManager.Save();
         }
     }

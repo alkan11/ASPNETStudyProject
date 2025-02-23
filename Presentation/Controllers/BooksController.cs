@@ -1,4 +1,5 @@
-﻿using Entities.Models;
+﻿using Entities.DTO;
+using Entities.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Services.Abstract;
@@ -30,7 +31,7 @@ namespace Presentation.Controllers
         }
 
         [HttpPut("id:int")]
-        public IActionResult UpdateOneBook(int id, Book book)
+        public IActionResult UpdateOneBook(int id, BookDto book)
         {
             _serviceManager.Bookservice.UpdateOneBook(id, book, false);
 

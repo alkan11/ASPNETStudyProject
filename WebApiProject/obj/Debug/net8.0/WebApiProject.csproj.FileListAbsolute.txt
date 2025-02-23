@@ -158,3 +158,5 @@ C:\Users\simse\source\repos\ASPNETStudyProjects\WebApiProject\bin\Debug\net8.0\M
 C:\Users\simse\source\repos\ASPNETStudyProjects\WebApiProject\bin\Debug\net8.0\Presentation.dll
 C:\Users\simse\source\repos\ASPNETStudyProjects\WebApiProject\bin\Debug\net8.0\Presentation.pdb
 C:\Users\simse\source\repos\ASPNETStudyProjects\WebApiProject\obj\Debug\net8.0\WebApiProject.sourcelink.json
+C:\Users\simse\source\repos\ASPNETStudyProjects\WebApiProject\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\simse\source\repos\ASPNETStudyProjects\WebApiProject\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
