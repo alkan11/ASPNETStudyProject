@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Presentation.ActionFilter;
 using Repositories.Context;
 using WebApiProject.Extensions;
 
@@ -13,6 +14,8 @@ builder.Services.AddControllers(config =>
 })
 .AddXmlDataContractSerializerFormatters()    
 .AddApplicationPart(typeof(Presentation.AssemblyReference).Assembly);
+
+builder.Services.AddScoped<ValidationFilterAttribute>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

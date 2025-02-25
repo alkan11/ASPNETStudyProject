@@ -1,5 +1,6 @@
 ﻿using Entities.DTO;
 using Entities.Models;
+using Entities.RequestFeature;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace Services.Abstract
 {
     public interface IBookservice
     {
-        IEnumerable<BookDto> GetAllBooks(bool trackchanges);
+       PagedList<Book> GetAllBooks(BookParameters bookParameters, bool trackchanges);
         Book GetOnebookById(int id, bool trackChanges);
         Book CreateOneBook(Book book);
         void UpdateOneBook(int id, BookDto book, bool trackChanges);

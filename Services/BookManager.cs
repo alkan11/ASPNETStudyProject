@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Entities.DTO;
 using Entities.Models;
+using Entities.RequestFeature;
 using Repositories.Abstract;
 using Services.Abstract;
 using System;
@@ -42,10 +43,10 @@ namespace Services
             _repositoryManager.Save();
         }
 
-        public IEnumerable<BookDto> GetAllBooks(bool trackchanges)
+        public PagedList<Book> GetAllBooks(BookParameters bookParameters, bool trackchanges)
         {
-            var books=_repositoryManager.Book.GetAllBooks(trackchanges);
-            return _mapper.Map<IEnumerable<BookDto>>(books);
+            var books=_repositoryManager.Book.GetAllBooks(bookParameters,trackchanges);
+            return books;
         } 
 
         public Book GetOnebookById(int id,bool trackchanges)

@@ -1,7 +1,9 @@
 ﻿using Entities.DTO;
 using Entities.Models;
+using Entities.RequestFeature;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Presentation.ActionFilter;
 using Services.Abstract;
 using System;
 using System.Collections.Generic;
@@ -23,6 +25,7 @@ namespace Presentation.Controllers
             _serviceManager = serviceManager;
             _logger = logger;
         }
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPost]
         public IActionResult CreateOneBook(Book book)
         {
@@ -39,9 +42,9 @@ namespace Presentation.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllBooks()
+        public IActionResult GetAllBooks([FromQuery]BookParameters bookParameters)
         {
-            var books = _serviceManager.Bookservice.GetAllBooks(false);
+            var books = _serviceManager.Bookservice.GetAllBooks(bookParameters,false);
             return Ok(books);
         }
 

@@ -1,4 +1,5 @@
 ﻿using Entities.Models;
+using Entities.RequestFeature;
 using Repositories.Abstract;
 using Repositories.Context;
 using System;
@@ -26,9 +27,11 @@ namespace Repositories.Concrete
             Delete(book);
         }
 
-        public IQueryable<Book> GetAllBooks(bool trackchanges)
+        public PagedList<Book> GetAllBooks(BookParameters bookParameters, bool trackchanges)
         {
-            return FindAll(trackchanges);
+            var aa = FindAll(trackchanges).ToList();
+
+            return PagedList<Book>.ToPagedList(aa,bookParameters.PageNumber,bookParameters.PageSize);
         }
 
         public Book GetOneBookById(int id, bool trackchanges)
