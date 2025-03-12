@@ -25,6 +25,9 @@ builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.ConfigureManagerRepository();
 builder.Services.ConfigureServiceManager();
 
+builder.Services.AddAuthentication();
+builder.Services.ConfigureIdentity();
+
 builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
@@ -44,6 +47,7 @@ if (app.Environment.IsProduction())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

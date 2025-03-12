@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Entities.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Repositories.Abstract;
 using Repositories.Concrete;
 using Repositories.Context;
@@ -27,6 +29,16 @@ namespace WebApiProject.Extensions
         {
             services.AddScoped<IBookservice, BookManager>();
             services.AddScoped<IServiceManager, ServiceManager>();
+        }
+        public static void  ConfigureIdentity(this IServiceCollection services)
+        {
+            var builder = services.AddIdentity<User, IdentityRole>(opt =>
+            {
+                opt.Password.RequireDigit = true;
+                opt.Password.RequireLowercase = false;
+                opt.Password.RequireUppercase = false;
+
+            }).AddEntityFrameworkStores<ApplicationDBContext>().AddDefaultTokenProviders();
         }
 
     }

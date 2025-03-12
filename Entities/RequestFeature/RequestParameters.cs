@@ -25,6 +25,8 @@ namespace Entities.RequestFeature
 
     public class BookParameters : RequestParameters
     {
-
+        public int MinPrice { get; set; }
+        public int MaxPrice { get; set; }
+        public bool ValidPriceRange => MaxPrice > MinPrice;
     }
 }
