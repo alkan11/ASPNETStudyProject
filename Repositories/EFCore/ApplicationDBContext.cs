@@ -19,7 +19,7 @@ namespace Repositories.Context
         {
             base.OnModelCreating(modelBuilder);
             //modelBuilder.ApplyConfiguration(new BookConfig());
-            //modelBuilder.ApplyConfiguration(new RoleConfiguration()); bunları böyle tek tek yazmaktansa 
+            //modelBuilder.ApplyConfiguration(new RoleConfiguration()); /*bunları böyle tek tek yazmaktansa*/
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }

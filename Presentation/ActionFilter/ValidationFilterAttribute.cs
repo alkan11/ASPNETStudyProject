@@ -15,7 +15,7 @@ namespace Presentation.ActionFilter
             var controller = context.RouteData.Values["controller"];
             var action=context.RouteData.Values["action"];
 
-            var param = context.ActionArguments.SingleOrDefault(x => x.Value.ToString().Contains("Book")).Value;
+            var param = context.ActionArguments.SingleOrDefault(x => x.Value.ToString().Contains("Dto")).Value;
 
             if(param is null) { context.Result = new BadRequestObjectResult($"Dto is null:{controller}{action}"); return; }
 

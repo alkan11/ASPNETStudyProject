@@ -10,6 +10,7 @@ namespace WebApiProject.Utility.AutoMapper
         {
             CreateMap<BookDto, Book>();
             CreateMap<Book, BookDto>();
+            CreateMap<UserForRegistrationDto, User>();
         }
     }
 }

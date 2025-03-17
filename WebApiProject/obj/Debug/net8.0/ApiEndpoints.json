@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "Presentation.Controllers.AuthenticationController",
+    "Method": "RegisterUser",
+    "RelativePath": "api/authentication",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Entities.DTO.UserForRegistrationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Presentation.Controllers.BooksController",
     "Method": "CreateOneBook",
     "RelativePath": "api/books",
@@ -23,6 +39,21 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [
+      {
+        "Name": "MinPrice",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "MaxPrice",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ValidPriceRange",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
       {
         "Name": "PageNumber",
         "Type": "System.Int32",

@@ -15,7 +15,7 @@ namespace WebApiProject.Extensions
         {
             services.AddDbContext<ApplicationDBContext>(options =>
             {
-                options.UseSqlServer(configuration.GetConnectionString("sqlConnection"));
+                options.UseSqlServer(configuration.GetConnectionString("sqlConnection"),b=>b.MigrationsAssembly("WebApiProject"));
             });
         }
 
@@ -29,6 +29,7 @@ namespace WebApiProject.Extensions
         {
             services.AddScoped<IBookservice, BookManager>();
             services.AddScoped<IServiceManager, ServiceManager>();
+            services.AddScoped<IAuthendicationService, AuthendicationManager>();
         }
         public static void  ConfigureIdentity(this IServiceCollection services)
         {

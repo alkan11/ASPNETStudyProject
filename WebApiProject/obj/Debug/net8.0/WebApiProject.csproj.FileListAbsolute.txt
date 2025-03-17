@@ -160,3 +160,8 @@ C:\Users\simse\source\repos\ASPNETStudyProjects\WebApiProject\bin\Debug\net8.0\P
 C:\Users\simse\source\repos\ASPNETStudyProjects\WebApiProject\obj\Debug\net8.0\WebApiProject.sourcelink.json
 C:\Users\simse\source\repos\ASPNETStudyProjects\WebApiProject\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\simse\source\repos\ASPNETStudyProjects\WebApiProject\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\simse\source\repos\ASPNETStudyProjects\WebApiProject\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\simse\source\repos\ASPNETStudyProjects\WebApiProject\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\simse\source\repos\ASPNETStudyProjects\WebApiProject\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\simse\source\repos\ASPNETStudyProjects\WebApiProject\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\simse\source\repos\ASPNETStudyProjects\WebApiProject\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
