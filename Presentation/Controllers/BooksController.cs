@@ -1,6 +1,7 @@
 ﻿using Entities.DTO;
 using Entities.Models;
 using Entities.RequestFeature;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Presentation.ActionFilter;
@@ -42,6 +43,7 @@ namespace Presentation.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult GetAllBooks([FromQuery]BookParameters bookParameters)
         {
             var books = _serviceManager.Bookservice.GetAllBooks(bookParameters,false);
