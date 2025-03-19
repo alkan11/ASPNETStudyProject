@@ -51,8 +51,17 @@ namespace Presentation.Controllers
             {
                 return Unauthorized();
             }
+            var tokenDto = await _serviceManager.AuthendicationService.CreateToken(true);
+            return Ok(tokenDto);
+        }
 
-            return Ok(new { Token = await _serviceManager.AuthendicationService.CreateToken() });
+
+        [HttpPost("refresh")]
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
+        public async Task<IActionResult> Refresh(TokenDto tokenDto)
+        {
+            var tokenDtoReturn=await _serviceManager.AuthendicationService.RefreshToken(tokenDto);
+            return Ok(tokenDtoReturn);
         }
 
     }

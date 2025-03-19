@@ -11,5 +11,7 @@ namespace Entities.Models
     {
         public string? FirstName { get; set; }
         public string? SurName { get; set; }
+        public string? RefreshToken { get; set; }
+        public DateTime RefreshTokenExpire { get; set; }
     }
 }

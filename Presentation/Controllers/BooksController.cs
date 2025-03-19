@@ -43,7 +43,7 @@ namespace Presentation.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        [Authorize(Roles ="Admin")]
         public IActionResult GetAllBooks([FromQuery]BookParameters bookParameters)
         {
             var books = _serviceManager.Bookservice.GetAllBooks(bookParameters,false);
